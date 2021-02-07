@@ -1,0 +1,14 @@
+@function rem($size) {
+  @return $size/16 * 1rem;
+}
+
+$breakpoints-up: (
+  'mobile': rem(375),
+  'desktop': rem(1440),
+);
+
+@mixin breakup($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}

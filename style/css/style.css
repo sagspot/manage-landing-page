@@ -1,0 +1,9 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Be Vietnam', sans-serif;
+  font-size: rem(16);
+}
+/*# sourceMappingURL=style.css.map */
