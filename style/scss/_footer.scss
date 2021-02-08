@@ -1,0 +1,120 @@
+footer {
+  color: $very-light-gray;
+  background: $very-dark-blue;
+}
+.footer {
+  padding: rem(50) 0 rem(28);
+  text-align: center;
+  @include breakup(mobile) {
+    > * {
+      margin: 0 !important;
+    }
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    display: grid;
+    grid-template-areas:
+      'logo links links newsletter'
+      '. links links .'
+      'social links links copy';
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+
+  .newsletter {
+    @include breakup(mobile) {
+      grid-area: newsletter;
+    }
+    .error {
+      display: block;
+      font-size: rem(13);
+      font-weight: 700;
+      margin-top: rem(4);
+      color: $bright-red;
+    }
+    &.btn-cta {
+      font-weight: 700;
+      margin-right: rem(8);
+      color: $bright-red;
+      background: $very-light-gray;
+
+      &::placeholder {
+        font-weight: 400;
+        color: $dark-blue;
+      }
+    }
+  }
+
+  input,
+  button {
+    border: 1px solid transparent;
+    box-shadow: none;
+    outline: none;
+  }
+  input {
+    border-color: $bright-red;
+  }
+
+  .links {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 160px;
+    margin: rem(48) rem(42);
+    text-align: left;
+    a {
+      width: 50%;
+      line-height: 2.36;
+      transition: color 0.2s ease;
+      &:hover {
+        color: $bright-red;
+      }
+    }
+    @include breakup(mobile) {
+      grid-area: links;
+    }
+  }
+
+  .social {
+    margin-bottom: rem(48);
+    a {
+      &:not(:last-child) {
+        margin-right: rem(32);
+        @include breakup(mobile) {
+          margin-right: rem(12);
+        }
+      }
+      svg {
+        transform: scale(1.6);
+        path {
+          transition: fill 0.2s ease;
+        }
+        &:hover {
+          path {
+            fill: $bright-red;
+          }
+        }
+        @include breakup(mobile) {
+          transform: scale(1);
+        }
+      }
+    }
+    @include breakup(mobile) {
+      grid-area: social;
+    }
+  }
+
+  .logo {
+    margin-bottom: rem(48);
+    @include breakup(mobile) {
+      grid-area: logo;
+    }
+  }
+
+  .copy {
+    font-size: rem(13);
+    @include breakup(mobile) {
+      grid-area: copy;
+    }
+  }
+}

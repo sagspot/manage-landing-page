@@ -1,0 +1,25 @@
+.cta {
+  margin-top: rem(40);
+  padding: rem(100) rem(36) rem(88);
+  text-align: center;
+  background: $bright-red;
+  @include breakup(mobile) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(40) rem(136) rem(62);
+  }
+
+  h2 {
+    margin-top: 0;
+    color: $very-light-gray;
+    @include breakup(mobile) {
+      width: 50%;
+    }
+  }
+
+  &-btn {
+    color: $bright-red;
+    background: $very-pale-red;
+  }
+}

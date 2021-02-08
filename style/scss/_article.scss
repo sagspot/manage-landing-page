@@ -1,0 +1,60 @@
+.article {
+  margin-top: rem(100);
+  @include breakup(mobile) {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &-title {
+    text-align: center;
+    margin-bottom: rem(56);
+    @include breakup(mobile) {
+      text-align: left;
+      width: 40%;
+    }
+  }
+  &s {
+    @include breakup(mobile) {
+      width: 60%;
+      margin-left: rem(128);
+    }
+  }
+  &-body {
+    margin-top: rem(56);
+    &--title {
+      margin-left: rem(16);
+      padding: rem(7.75) 0;
+      padding-left: rem(80);
+      border-radius: rem(50) 0 0 rem(50);
+      background: $very-pale-red;
+      position: relative;
+      @include breakup(mobile) {
+        background: transparent;
+        padding-left: 0;
+        margin-left: rem(80);
+      }
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: rem(7.75) rem(25);
+        border-radius: rem(50);
+        color: $very-light-gray;
+        background: $bright-red;
+        @include breakup(mobile) {
+          left: rem(-80);
+        }
+      }
+    }
+    p {
+      margin: 0 rem(16);
+      @include breakup(mobile) {
+        margin-left: rem(80);
+      }
+    }
+  }
+  @include breakup(mobile) {
+    display: flex;
+    align-items: flex-start;
+  }
+}

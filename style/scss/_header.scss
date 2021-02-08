@@ -1,0 +1,132 @@
+.nav {
+  position: relative;
+  margin-top: rem(44);
+  margin-bottom: rem(48);
+  font-weight: 500;
+  z-index: 1000;
+  @include breakup(mobile) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: rem(55) auto rem(114);
+  }
+  .brand {
+    img.logo {
+      width: rem(110);
+    }
+  }
+  .mobile-icon {
+    @include breakup(mobile) {
+      display: none;
+    }
+  }
+  .open-menu {
+    animation: zoom-out 0.3s ease;
+  }
+  .close-menu {
+    visibility: hidden;
+    height: 0;
+  }
+
+  &-links {
+    visibility: hidden;
+    position: absolute;
+    top: rem(38);
+    width: 100%;
+    border-radius: rem(4);
+    text-align: center;
+    color: $dark-blue;
+    background: $very-light-gray;
+    padding: rem(46) 0 rem(40);
+    @include breakup(mobile) {
+      visibility: visible;
+      position: unset;
+      display: flex;
+      width: unset;
+      padding: unset;
+      background: unset;
+    }
+    a {
+      display: block;
+      transition: color 0.2s ease;
+      &:hover {
+        color: $dark-grayish-blue;
+      }
+      @include breakup(mobile) {
+        font-size: rem(13);
+      }
+      &:not(:last-child) {
+        margin-bottom: rem(32);
+        @include breakup(mobile) {
+          margin-bottom: unset;
+          margin-right: rem(32);
+        }
+      }
+    }
+  }
+
+  &-cta {
+    display: none;
+    @include breakup(mobile) {
+      display: block;
+    }
+  }
+
+  &.open {
+    .nav-links {
+      visibility: visible;
+    }
+    .close-menu {
+      visibility: visible;
+      height: initial;
+      animation: zoom-in 0.3s ease;
+    }
+    .open-menu {
+      visibility: hidden;
+      animation: fade-out 2s ease;
+      height: 0;
+    }
+  }
+}
+
+.modal {
+  @include breakdown(mobile) {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $dark-grayish-blue;
+    background: linear-gradient(
+      rgba($color: $dark-grayish-blue, $alpha: 0),
+      rgba($color: $dark-grayish-blue, $alpha: 0.9)
+    );
+    z-index: 100;
+
+    &.open {
+      visibility: visible;
+    }
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    visibility: hidden;
+    transform: scale(0);
+  }
+  100% {
+    visibility: visible;
+    transform: scale(1);
+  }
+}
+@keyframes zoom-out {
+  0% {
+    visibility: hidden;
+    transform: scale(2);
+  }
+  100% {
+    visibility: visible;
+    transform: scale(1);
+  }
+}

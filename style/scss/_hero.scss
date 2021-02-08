@@ -1,0 +1,31 @@
+.hero {
+  @include breakup(mobile) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-img {
+    max-width: rem(540);
+    margin: auto;
+    @include breakup(mobile) {
+      max-width: unset;
+      width: 50%;
+      order: 2;
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  &-text {
+    text-align: center;
+    @include breakup(mobile) {
+      width: 40%;
+      text-align: left;
+      order: 1;
+    }
+    p {
+      margin-bottom: rem(32);
+    }
+  }
+}

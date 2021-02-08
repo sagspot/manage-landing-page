@@ -1,1 +1,10 @@
-@import "./globals";
+@import './variables';
+@import './mixins';
+@import './globals';
+
+@import './header';
+@import './hero';
+@import './article';
+@import './testimonial';
+@import './cta';
+@import './footer';

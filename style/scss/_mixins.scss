@@ -3,12 +3,18 @@
 }
 
 $breakpoints-up: (
-  'mobile': rem(375),
+  'mobile': rem(991),
   'desktop': rem(1440),
 );
 
 @mixin breakup($size) {
   @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakdown($size) {
+  @media (max-width: map-get($breakpoints-up, $size )) {
     @content;
   }
 }
