@@ -3,11 +3,41 @@
   padding: rem(100) rem(36) rem(88);
   text-align: center;
   background: $bright-red;
+  position: relative;
+  z-index: 1;
+
+  > * {
+    z-index: 10;
+  }
   @include breakup(mobile) {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: rem(40) rem(136) rem(62);
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url('../../images/bg-tablet-pattern.svg');
+    opacity: 0.1;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: rem(-200) rem(50);
+    z-index: 2;
+
+    @include breakdown(mobile-sm) {
+      background-size: 100%;
+      background-position: rem(-280) rem(80);
+    }
+
+    @include breakup(mobile) {
+      background-position: rem(300) rem(-37);
+    }
   }
 
   h2 {

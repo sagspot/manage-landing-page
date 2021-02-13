@@ -118,3 +118,15 @@ footer {
     }
   }
 }
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: $bright-red;
+    transition: color 0.2s ease;
+    &:hover {
+      color: lighten($bright-red, 25%);
+    }
+  }
+}

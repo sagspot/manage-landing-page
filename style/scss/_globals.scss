@@ -9,6 +9,31 @@ body {
   font-size: rem(16);
   position: relative;
 
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../images/bg-tablet-pattern.svg');
+    background-size: rem(760) rem(760);
+    background-position: rem(266) rem(-251);
+    background-repeat: no-repeat;
+    z-index: -1;
+    
+    @include breakdown (mobile-sm) {
+      background-size: 500px 500px;
+      background-position: 59px -149px;
+      
+    }
+    
+    @include breakup(mobile) {
+      background-size: rem(800) rem(800);
+      background-position: rem(760) rem(-254);
+    }
+  }
+
   &.open {
     overflow-y: hidden;
   }
@@ -81,8 +106,10 @@ h3 {
 
 h1 {
   font-size: rem(38);
+  line-height: 1.4;
   @include breakup(mobile) {
     font-size: rem(54);
+    line-height: 1.22;
   }
 }
 h2 {
