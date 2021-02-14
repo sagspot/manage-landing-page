@@ -2,9 +2,6 @@
   text-align: center;
   margin-top: rem(76);
 
-  &-cards {
-    display: flex;
-  }
   h2 {
     font-size: rem(32);
     margin-bottom: rem(96);
@@ -12,6 +9,7 @@
       font-size: rem(39);
     }
   }
+
   h3 {
     padding: rem(54) 0 rem(28);
   }
@@ -24,19 +22,12 @@
   }
 
   &-card {
-    width: 90%;
-    max-width: rem(448);
-    margin: 0 auto;
     background: $very-light-gray;
-    @include breakup(mobile) {
-      width: rem(534);
-      margin: 0 rem(8);
-    }
 
     .card {
       width: 85%;
       padding-bottom: rem(52);
-      margin: auto;
+      margin: 0 auto;
       position: relative;
     }
   }
@@ -48,33 +39,7 @@
     transform: translateX(-50%);
   }
 
-  &-range {
-    @include breakdown(mobile) {
-      margin-top: rem(10);
-      span {
-        display: inline-block;
-        width: rem(8);
-        height: rem(8);
-        margin: rem(8);
-        border-radius: 50%;
-        border: rem(1) solid $bright-red;
-
-        &.active {
-          background: $bright-red;
-        }
-      }
-    }
-  }
-
   &-btn {
     margin-top: rem(44);
-  }
-}
-
-@include breakdown(mobile) {
-  #card2,
-  #card3,
-  #card4 {
-    display: none;
   }
 }

@@ -21,13 +21,12 @@ body {
     background-position: rem(266) rem(-251);
     background-repeat: no-repeat;
     z-index: -1;
-    
-    @include breakdown (mobile-sm) {
+
+    @include breakdown(mobile-sm) {
       background-size: 500px 500px;
       background-position: 59px -149px;
-      
     }
-    
+
     @include breakup(mobile) {
       background-size: rem(800) rem(800);
       background-position: rem(760) rem(-254);
